@@ -1,0 +1,290 @@
+.plans-popup {
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 3rem 0rem;
+  left: 100%;
+  top: 100%;
+  width: calc(100vw - 15px);
+  height: 100vh;
+  background-color: transparent;
+  -webkit-transition-property: background-color, -webkit-backdrop-filter;
+  transition-property: background-color, -webkit-backdrop-filter;
+  transition-property: background-color, backdrop-filter;
+  transition-property: background-color, backdrop-filter, -webkit-backdrop-filter;
+  -webkit-transition-duration: 0.8s;
+          transition-duration: 0.8s;
+  z-index: 100000;
+}
+
+.plans-popup-anim {
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+}
+
+.plans-popup-container {
+  position: relative;
+  width: 90%;
+  height: 90%;
+  max-width: 65rem;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  background-color: white;
+  border-radius: 5px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: minmax(0, 33%) minmax(0, 67%);
+      grid-template-columns: minmax(0, 33%) minmax(0, 67%);
+      grid-template-areas: "img-container text-container";
+  grid-column-gap: 40px;
+}
+
+.plans-popup-container-img-container {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: img-container;
+}
+
+.plans-popup-container-img-container img {
+  width: 100%;
+  height: calc(100%/2);
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+}
+
+.plans-popup-container-anim {
+  -webkit-animation-name: open-anim;
+          animation-name: open-anim;
+  -webkit-animation-duration: 0.8s;
+          animation-duration: 0.8s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.plans-popup-container-text-container {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: text-container;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding: 1rem 3.125rem 1rem 0;
+}
+
+.plans-popup-container-text-container-textbox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.plans-popup-container-text-container-textbox p {
+  width: 50%;
+  font-size: 0.875rem;
+}
+
+.plans-popup-primary-title {
+  text-align: left;
+  padding: 0;
+}
+
+.plans-popup-primary-title-div {
+  padding-top: 0;
+}
+
+.first-para {
+  border-right: 1px solid #eee;
+  padding-right: 5%;
+}
+
+.second-para {
+  padding-left: 5%;
+}
+
+.popup-book-btn {
+  margin: 1rem 0 0 0;
+}
+
+.plans-popup-primary-title-div {
+  margin: 0;
+}
+
+.popup-close-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  border: none;
+  background-color: none;
+}
+
+.plans-popup-close-anim {
+  -webkit-animation-name: close-anim;
+          animation-name: close-anim;
+  -webkit-animation-duration: 0.3s;
+          animation-duration: 0.3s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.plans-popup-container-close-anim {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+@-webkit-keyframes open-anim {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  60% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes open-anim {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  60% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@-webkit-keyframes close-anim {
+  0% {
+    top: 0;
+    left: 0;
+    opacity: 1;
+  }
+  99% {
+    top: 0;
+    left: 0;
+    opacity: 0;
+  }
+  100% {
+    top: 100%;
+    left: 100%;
+    opacity: 0;
+  }
+}
+
+@keyframes close-anim {
+  0% {
+    top: 0;
+    left: 0;
+    opacity: 1;
+  }
+  99% {
+    top: 0;
+    left: 0;
+    opacity: 0;
+  }
+  100% {
+    top: 100%;
+    left: 100%;
+    opacity: 0;
+  }
+}
+
+@media (max-width: 950px) {
+  .plans-popup-container {
+    -ms-grid-columns: 100%;
+        grid-template-columns: 100%;
+        grid-template-areas: "text-container";
+    grid-column-gap: 0;
+    width: 85%;
+    max-width: 47rem;
+    -ms-grid-rows: 100%;
+        grid-template-rows: 100%;
+    border-radius: 5px;
+  }
+  .plans-popup-container-text-container {
+    padding: 0rem 3rem;
+  }
+  .plans-popup-container-text-container h2 {
+    margin-bottom: 1rem;
+  }
+  .plans-popup-container-text-container-textbox p {
+    font-size: 0.88rem;
+  }
+  .popup-book-btn {
+    margin-top: 1.5rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .plans-popup-container-text-container h2 {
+    margin-bottom: 2rem;
+  }
+  .plans-popup-container-text-container-textbox p {
+    font-size: 0.9rem;
+  }
+  .popup-book-btn {
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 660px) {
+  .plans-popup-container {
+    height: auto;
+    max-height: 45rem;
+  }
+  .plans-popup-container-text-container {
+    overflow-y: scroll;
+    display: -ms-grid;
+    display: grid;
+        grid-template-areas: "heading" "heading-secondary" "text" "button";
+    padding: 3rem 3rem 0rem;
+  }
+  .plans-popup-container-text-container h3 {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: heading-secondary;
+  }
+  .plans-popup-container-text-container-textbox {
+    grid-area: "text";
+  }
+  .plans-popup-primary-title-div {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: heading;
+  }
+  .popup-book-btn {
+    -ms-grid-row: 4;
+    -ms-grid-column: 1;
+    grid-area: button;
+    margin-bottom: 3rem;
+  }
+}
+/*# sourceMappingURL=PlansPopup.css.map */

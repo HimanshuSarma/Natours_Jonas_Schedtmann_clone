@@ -1,0 +1,157 @@
+$img-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+@import '../abstract/variables';
+.plan-comp {
+    position: relative;
+    perspective: 110rem;
+    // background-image: linear-gradient(45deg, red, green), url('./nat-5.jpg');
+    &-card {
+        text-align: center;
+        transition: transform .8s;
+        backface-visibility: hidden;
+    }
+    &-front,
+    &-back {
+        box-shadow: 0 1.5rem 2.5rem rgba($color-black, 0.1);
+    }
+    &-front {
+        transition: transform 0.8s;
+        background-color: white;
+        &-price-container {
+            display: none;
+        }
+        &-img-container {
+            position: relative;
+            background-size: cover;
+            background-position: top center;
+            background-blend-mode: screen;
+            padding: 7rem 0;
+            clip-path: $img-clip-path;
+        }
+        &-features {
+            position: relative;
+            padding: 2rem 0;
+            &-heading {
+                position: absolute;
+                top: -7rem;
+                right: 10px;
+                text-align: right;
+                font-size: 1.75rem;
+                width: 75%;
+                margin: 0;
+                & span {
+                    font-weight: 300;
+                    padding: 0.625rem 1.1rem;
+                    color: white;
+                    text-align: right;
+                    box-decoration-break: clone;
+                    -webkit-box-decoration-break: clone;
+                }
+            }
+            & ul {
+                list-style: none;
+                padding: 0;
+                & li {
+                    width: 100%;
+                }
+                & :not(:last-child)::after {
+                    content: "";
+                    display: block;
+                    margin: 0.7rem auto;
+                    width: 60%;
+                    height: 1px;
+                    background-color: #eee;
+                }
+            }
+        }
+    }
+    &-back {
+        display: grid;
+        align-items: center;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        transform: rotateY(180deg);
+    }
+    &-price-container {
+        color: white;
+        &-pricetag {
+            font-size: 3.75rem;
+            font-weight: 100;
+            margin: 0;
+            margin-bottom: 30%;
+        }
+        & button {
+            position: relative;
+            color: #777;
+            font-family: inherit;
+            font-size: 1rem;
+            padding: 1.2rem 2.6rem;
+            border: none;
+            border-radius: 100px;
+            box-shadow: 0 1.5rem 2.5rem rgba($color-black, 0.1);
+        }
+    }
+    &:hover &-front {
+        transform: rotateY(-180deg);
+    }
+    &:hover &-back {
+        transform: rotateY(0deg);
+    }
+}
+
+@media (max-width: 900px) {
+    .plan-comp {
+        &-front {
+            &-img-container {
+                padding: 9rem 0;
+            }
+            &-price-container {
+                clip-path: polygon(0 3rem, 100% 0, 100% 100%, 0 100%);
+                display: block;
+                &-content {
+                    color: white;
+                    padding: 5rem 0 3rem;
+                    &-header {
+                        margin-top: 0;
+                    }
+                    &-pricetag {
+                        margin-bottom: 1rem;
+                    }
+                    &-button {
+                        margin-top: 0;
+                    }
+                }
+            }
+            &-features {
+                padding-bottom: 1.2rem;
+                &-heading {
+                    top: -6.7rem;
+                }
+            }
+        }
+        &-back {
+            display: none;
+        }
+        &:hover &-front {
+            transform: rotateY(0);
+        }
+    }
+}
+
+@media (max-width: 385px) {
+    .plan-comp {
+        &-front {
+            &-features {
+                &-heading {
+                    text-align: left;
+                    left: 10px;
+                    & span {
+                        text-align: left;
+                    }
+                }
+            }
+        }
+    }
+}

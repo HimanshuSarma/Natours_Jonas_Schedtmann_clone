@@ -1,0 +1,16 @@
+.main-grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: minmax(0px, 1fr) (minmax(0px, 34.45rem))[2] minmax(0px, 1fr);
+      grid-template-columns: minmax(0px, 1fr) repeat(2, minmax(0px, 34.45rem)) minmax(0px, 1fr);
+  grid-column-gap: 15px;
+}
+
+@media (max-width: 900px) {
+  .main-grid {
+    -ms-grid-columns: minmax(1rem, 1fr) minmax(0px, 28rem) minmax(1rem, 1fr);
+        grid-template-columns: minmax(1rem, 1fr) minmax(0px, 28rem) minmax(1rem, 1fr);
+    grid-column-gap: 0;
+  }
+}
+/*# sourceMappingURL=ContentGrid.css.map */

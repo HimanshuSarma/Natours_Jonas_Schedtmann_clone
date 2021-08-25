@@ -1,0 +1,32 @@
+.features-card {
+    text-align: center;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 1rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    box-shadow: 0 0.9375rem 2.5rem rgb(0 0 0 / 15%);
+    transition-property: transform;
+    transition-duration: 250ms;
+}
+
+.features-card:hover {
+    transform: translateY(-10px) scale(1.02);
+}
+
+.icon {
+    font-size: 4rem;
+    display: inline-block;
+    background-image: linear-gradient(to right, #7ed56f, #28b485);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.features-card-heading {
+    margin-top: 0;
+    font-size: inherit;
+}
+
+.features-card-description {
+    font-size: 0.9375rem;
+}

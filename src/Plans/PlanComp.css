@@ -1,0 +1,180 @@
+.plan-comp {
+  position: relative;
+  -webkit-perspective: 110rem;
+          perspective: 110rem;
+}
+
+.plan-comp-card {
+  text-align: center;
+  -webkit-transition: -webkit-transform .8s;
+  transition: -webkit-transform .8s;
+  transition: transform .8s;
+  transition: transform .8s, -webkit-transform .8s;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+.plan-comp-front, .plan-comp-back {
+  -webkit-box-shadow: 0 1.5rem 2.5rem rgba(0, 0, 0, 0.1);
+          box-shadow: 0 1.5rem 2.5rem rgba(0, 0, 0, 0.1);
+}
+
+.plan-comp-front {
+  -webkit-transition: -webkit-transform 0.8s;
+  transition: -webkit-transform 0.8s;
+  transition: transform 0.8s;
+  transition: transform 0.8s, -webkit-transform 0.8s;
+  background-color: white;
+}
+
+.plan-comp-front-price-container {
+  display: none;
+}
+
+.plan-comp-front-img-container {
+  position: relative;
+  background-size: cover;
+  background-position: top center;
+  background-blend-mode: screen;
+  padding: 7rem 0;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+          clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
+
+.plan-comp-front-features {
+  position: relative;
+  padding: 2rem 0;
+}
+
+.plan-comp-front-features-heading {
+  position: absolute;
+  top: -7rem;
+  right: 10px;
+  text-align: right;
+  font-size: 1.75rem;
+  width: 75%;
+  margin: 0;
+}
+
+.plan-comp-front-features-heading span {
+  font-weight: 300;
+  padding: 0.625rem 1.1rem;
+  color: white;
+  text-align: right;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.plan-comp-front-features ul {
+  list-style: none;
+  padding: 0;
+}
+
+.plan-comp-front-features ul li {
+  width: 100%;
+}
+
+.plan-comp-front-features ul :not(:last-child)::after {
+  content: "";
+  display: block;
+  margin: 0.7rem auto;
+  width: 60%;
+  height: 1px;
+  background-color: #eee;
+}
+
+.plan-comp-back {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+
+.plan-comp-price-container {
+  color: white;
+}
+
+.plan-comp-price-container-pricetag {
+  font-size: 3.75rem;
+  font-weight: 100;
+  margin: 0;
+  margin-bottom: 30%;
+}
+
+.plan-comp-price-container button {
+  position: relative;
+  color: #777;
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 1.2rem 2.6rem;
+  border: none;
+  border-radius: 100px;
+  -webkit-box-shadow: 0 1.5rem 2.5rem rgba(0, 0, 0, 0.1);
+          box-shadow: 0 1.5rem 2.5rem rgba(0, 0, 0, 0.1);
+}
+
+.plan-comp:hover .plan-comp-front {
+  -webkit-transform: rotateY(-180deg);
+          transform: rotateY(-180deg);
+}
+
+.plan-comp:hover .plan-comp-back {
+  -webkit-transform: rotateY(0deg);
+          transform: rotateY(0deg);
+}
+
+@media (max-width: 900px) {
+  .plan-comp-front-img-container {
+    padding: 9rem 0;
+  }
+  .plan-comp-front-price-container {
+    -webkit-clip-path: polygon(0 3rem, 100% 0, 100% 100%, 0 100%);
+            clip-path: polygon(0 3rem, 100% 0, 100% 100%, 0 100%);
+    display: block;
+  }
+  .plan-comp-front-price-container-content {
+    color: white;
+    padding: 5rem 0 3rem;
+  }
+  .plan-comp-front-price-container-content-header {
+    margin-top: 0;
+  }
+  .plan-comp-front-price-container-content-pricetag {
+    margin-bottom: 1rem;
+  }
+  .plan-comp-front-price-container-content-button {
+    margin-top: 0;
+  }
+  .plan-comp-front-features {
+    padding-bottom: 1.2rem;
+  }
+  .plan-comp-front-features-heading {
+    top: -6.7rem;
+  }
+  .plan-comp-back {
+    display: none;
+  }
+  .plan-comp:hover .plan-comp-front {
+    -webkit-transform: rotateY(0);
+            transform: rotateY(0);
+  }
+}
+
+@media (max-width: 385px) {
+  .plan-comp-front-features-heading {
+    text-align: left;
+    left: 10px;
+  }
+  .plan-comp-front-features-heading span {
+    text-align: left;
+  }
+}
+/*# sourceMappingURL=PlanComp.css.map */

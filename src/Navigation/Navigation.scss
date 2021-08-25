@@ -1,0 +1,292 @@
+@import '../abstract/variables';
+.nav {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    &-container {
+        position: fixed;
+        top: 4rem;
+        right: 4.375rem;
+        width: 4rem;
+        height: 4rem;
+        border-radius: 50%;
+        z-index: 100;
+    }
+    &-backside,
+    &-frontside {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+    }
+    &-backside {
+        background-image: radial-gradient($color-light-green, $color-dark-green);
+        transition-property: transform;
+        transition-duration: 1s;
+        &-anim {
+            transform: scale(80);
+        }
+    }
+    &-frontside {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+        &:hover &-ham::before {
+            bottom: 0.6rem;
+        }
+        &:hover &-ham::after {
+            top: 0.6rem;
+        }
+        &-ham,
+        &-ham::after,
+        &-ham::before {
+            background-color: rgb(51, 51, 51);
+        }
+        &-ham {
+            position: relative;
+            width: 40%;
+            height: 2px;
+        }
+        &-ham::before {
+            position: absolute;
+            bottom: 0.5rem;
+            content: "";
+            display: block;
+            width: 100%;
+            height: 100%;
+            transition: bottom 0.1s;
+        }
+        &-ham::after {
+            position: absolute;
+            top: 0.5rem;
+            content: "";
+            display: block;
+            width: 100%;
+            height: 100%;
+            transition: top 0.1s;
+        }
+    }
+}
+
+.navigation-buttons {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 50%;
+    left: 100%;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    // transition-property: width, height, opacity, top, left, transform;
+    // transition-duration: 1s;
+}
+
+// .navigation-buttons>* {
+//     transition-property: color, background-position;
+//     transition-duration: 0.7s;
+//     background: linear-gradient(-60deg, white 0%, white 50%, transparent 50%);
+//     background-size: 250%;
+//     background-position: top left;
+//     padding: 1rem 2rem;
+//     border: none;
+//     color: white;
+//     font-family: inherit;
+//     font-size: 2rem;
+//     font-weight: 300;
+// }
+// .navigation-buttons>*:hover {
+//     color: $color-light-green;
+//     background-position: bottom right;
+// }
+.nav-buttons-open-anim {
+    animation-name: nav-open-anim;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes nav-open-anim {
+    0% {
+        width: 0;
+        height: 0;
+        opacity: 0;
+        left: 0;
+        transform: translateY(-50%);
+    }
+    40% {
+        width: 0;
+        height: 0;
+        opacity: 0;
+        left: -5rem;
+        transform: translateY(-50%);
+    }
+    60% {
+        width: $navbar-width;
+        height: 100vh;
+        opacity: 1;
+        left: 3rem;
+        transform: translateY(-50%);
+    }
+    100% {
+        width: $navbar-width;
+        height: 100vh;
+        opacity: 1;
+        left: 0;
+        transform: translateY(-50%);
+    }
+}
+
+.nav-buttons-close-anim {
+    animation-name: nav-close-anim;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes nav-close-anim {
+    0% {
+        width: $viewport-width;
+        height: 100vh;
+        opacity: 1;
+        left: 0;
+        transform: translateY(-50%);
+    }
+    25% {
+        width: $viewport-width;
+        height: 100vh;
+        opacity: 1;
+        left: 5rem;
+        transform: translateY(-50%);
+    }
+    45% {
+        width: $viewport-width;
+        height: 100vh;
+        opacity: 0;
+        left: -20rem;
+        transform: translateY(-50%);
+    }
+    46% {
+        width: 0;
+        height: 0;
+        opacity: 0;
+        left: -20rem;
+        transform: translateY(-50%);
+    }
+}
+
+.ham-open-anim,
+.ham-close-anim {
+    animation-duration: 0.4s;
+    &::before,
+    &::after {
+        animation-duration: 0.4s;
+    }
+}
+
+.ham-open-anim {
+    animation-name: center-stick-open-anim;
+    animation-fill-mode: forwards;
+    &::before,
+    &::after {
+        animation-fill-mode: forwards;
+    }
+    &::before {
+        animation-name: before-stick-open-anim;
+    }
+    &::after {
+        animation-name: after-stick-open-anim;
+    }
+}
+
+.ham-close-anim {
+    animation-name: center-stick-close-anim;
+    &::before {
+        animation-name: before-stick-close-anim;
+    }
+    &::after {
+        animation-name: after-stick-close-anim;
+    }
+}
+
+@keyframes center-stick-open-anim {
+    0% {
+        background-color: transparent;
+    }
+    100% {
+        background-color: transparent;
+    }
+}
+
+@keyframes before-stick-open-anim {
+    0% {
+        transform: rotate(0);
+        bottom: 0;
+    }
+    100% {
+        transform: rotate(135deg);
+        bottom: 0;
+    }
+}
+
+@keyframes after-stick-open-anim {
+    0% {
+        transform: rotate(0);
+        top: 0;
+    }
+    100% {
+        transform: rotate(-135deg);
+        top: 0;
+    }
+}
+
+@keyframes center-stick-close-anim {
+    0% {
+        background-color: transparent;
+    }
+    100% {
+        background-color: rgb(51, 51, 51);
+    }
+}
+
+@keyframes before-stick-close-anim {
+    0% {
+        transform: rotate(135deg);
+        bottom: 0;
+    }
+    100% {
+        transform: rotate(0);
+        bottom: 0.6rem;
+    }
+}
+
+@keyframes after-stick-close-anim {
+    0% {
+        transform: rotate(-135deg);
+        top: 0;
+    }
+    100% {
+        transform: rotate(0);
+        top: 0.6rem;
+    }
+}
+
+@media (max-width: 900px) {
+    .nav {
+        &-container {
+            top: 2rem;
+            right: 2.5rem;
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .nav {
+        &-container {
+            right: 1.15rem;
+        }
+    }
+}

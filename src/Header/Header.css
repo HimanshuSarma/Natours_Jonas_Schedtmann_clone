@@ -1,0 +1,177 @@
+.header {
+  height: 95vh;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(126, 213, 111, 0.8)), to(rgba(40, 180, 133, 0.8))), url("../imgs/hero.jpg");
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url("../imgs/hero.jpg");
+  background-size: cover;
+  background-position: top;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+          clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+      grid-template-areas: "header-logo ... ... ..." "... header-content-container header-content-container ...";
+  grid-column-gap: 0;
+  -ms-grid-rows: (38vh)[2];
+      grid-template-rows: repeat(2, 38vh);
+}
+
+.header-logo {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: header-logo;
+  width: 15%;
+  min-width: 4.265625rem;
+  max-width: 5.119rem;
+  margin-top: 2.5rem;
+  margin-left: 2.5rem;
+}
+
+.header-content-container {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-area: header-content-container;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  text-align: center;
+}
+
+.header-primary-title, .header-sub-title {
+  color: white;
+}
+
+.header-primary-title {
+  font-weight: 400;
+  font-size: 3.75rem;
+  letter-spacing: 2.1875rem;
+  -webkit-animation: header-primary-title 1s ease-in-out;
+          animation: header-primary-title 1s ease-in-out;
+}
+
+.header-sub-title {
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: 1.09375rem;
+  -webkit-animation: header-sub-title 1s ease-in-out;
+          animation: header-sub-title 1s ease-in-out;
+}
+
+@-webkit-keyframes header-primary-title {
+  0% {
+    -webkit-transform: translate(-100px, 10px);
+            transform: translate(-100px, 10px);
+    opacity: 0;
+  }
+  80% {
+    -webkit-transform: translate(10px, 2px);
+            transform: translate(10px, 2px);
+    opacity: 0.8;
+  }
+  100% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes header-primary-title {
+  0% {
+    -webkit-transform: translate(-100px, 10px);
+            transform: translate(-100px, 10px);
+    opacity: 0;
+  }
+  80% {
+    -webkit-transform: translate(10px, 2px);
+            transform: translate(10px, 2px);
+    opacity: 0.8;
+  }
+  100% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes header-sub-title {
+  0% {
+    -webkit-transform: translate(100px, -10px);
+            transform: translate(100px, -10px);
+    opacity: 0;
+  }
+  80% {
+    -webkit-transform: translate(-10px, -2px);
+            transform: translate(-10px, -2px);
+    opacity: 0.8;
+  }
+  100% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes header-sub-title {
+  0% {
+    -webkit-transform: translate(100px, -10px);
+            transform: translate(100px, -10px);
+    opacity: 0;
+  }
+  80% {
+    -webkit-transform: translate(-10px, -2px);
+            transform: translate(-10px, -2px);
+    opacity: 0.8;
+  }
+  100% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 900px) {
+  .header {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+    -ms-grid-columns: minmax(0px, 1fr) (minmax(0px, 34.45rem))[2] minmax(0px, 1fr);
+        grid-template-columns: minmax(0px, 1fr) repeat(2, minmax(0px, 34.45rem)) minmax(0px, 1fr);
+  }
+}
+
+@media (max-width: 760px) {
+  .header-primary-title {
+    letter-spacing: 0.4rem;
+  }
+  .header-sub-title {
+    letter-spacing: 0.3rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .header {
+    grid-column-gap: 15px;
+  }
+  .header-primary-title {
+    font-size: 3.1rem;
+  }
+  .header-sub-title {
+    font-size: 1rem;
+  }
+  .header-btn {
+    font-size: 1rem;
+  }
+  .header-logo {
+    margin-left: 1.15rem;
+  }
+}
+
+@media (max-width: 340px) {
+  .header-primary-title {
+    font-size: 2.8rem;
+  }
+  .header-sub-title {
+    font-size: 0.9rem;
+  }
+  .header-btn {
+    font-size: 0.9rem;
+  }
+}
+/*# sourceMappingURL=Header.css.map */

@@ -1,0 +1,24 @@
+@import '../abstract/variables';
+.navigation-list-btn {
+    transition-property: color, background-position, transform;
+    transition-duration: 0.5s;
+    background: linear-gradient(-60deg, white 0%, white 50%, transparent 50%);
+    background-size: 250%;
+    background-position: top left;
+    padding: 1rem 2rem;
+    border: none;
+    color: white;
+    font-family: inherit;
+    font-size: 2rem;
+    font-weight: 300;
+    margin-bottom: 0.5rem;
+    & span {
+        margin-right: 1rem;
+    }
+}
+
+.navigation-list-btn:hover {
+    color: $color-light-green;
+    background-position: bottom right;
+    transform: translateX(1rem);
+}

@@ -1,0 +1,30 @@
+.navigation-list-btn {
+  -webkit-transition-property: color, background-position, -webkit-transform;
+  transition-property: color, background-position, -webkit-transform;
+  transition-property: color, background-position, transform;
+  transition-property: color, background-position, transform, -webkit-transform;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+  background: linear-gradient(-60deg, white 0%, white 50%, transparent 50%);
+  background-size: 250%;
+  background-position: top left;
+  padding: 1rem 2rem;
+  border: none;
+  color: white;
+  font-family: inherit;
+  font-size: 2rem;
+  font-weight: 300;
+  margin-bottom: 0.5rem;
+}
+
+.navigation-list-btn span {
+  margin-right: 1rem;
+}
+
+.navigation-list-btn:hover {
+  color: #7ed56f;
+  background-position: bottom right;
+  -webkit-transform: translateX(1rem);
+          transform: translateX(1rem);
+}
+/*# sourceMappingURL=NavigationBtn.css.map */

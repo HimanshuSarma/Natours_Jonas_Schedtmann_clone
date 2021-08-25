@@ -1,0 +1,213 @@
+.booking {
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#7ed56f), to(#28b485));
+  background-image: linear-gradient(to bottom right, #7ed56f, #28b485);
+      grid-template-areas: "... background-img background-img ...";
+}
+
+.booking-background-img {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-area: background-img;
+  margin: 5rem 0;
+  background-image: url("./nat-10.jpg");
+  background-size: cover;
+  background-position: center;
+  border-radius: 7px;
+  overflow: hidden;
+}
+
+.booking-form {
+  padding: 3rem 0 3rem 4rem;
+  width: 60%;
+  background-color: rgba(255, 255, 255, 0.9);
+  -webkit-clip-path: polygon(0 0, 100% 0, 80% 100%, 0 100%);
+          clip-path: polygon(0 0, 100% 0, 80% 100%, 0 100%);
+}
+
+.booking-form > * {
+  width: 70%;
+}
+
+.booking-form-input:focus {
+  outline: none;
+  -webkit-box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.15);
+          box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.15);
+}
+
+.booking-form-input:focus:valid {
+  border-bottom: 3px solid #28b485;
+}
+
+.booking-form-input:focus:invalid {
+  border-bottom: 3px solid #ff7730;
+}
+
+.booking-form-input {
+  font-family: inherit;
+  font-size: 1rem;
+  border: none;
+  border-bottom: 3px solid transparent;
+  padding: 1rem;
+  width: 100%;
+}
+
+.booking-form-input-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 2rem;
+}
+
+.booking-form-input:placeholder-shown + .booking-form-input-label {
+  -webkit-transform: translateY(-2.5rem);
+          transform: translateY(-2.5rem);
+  opacity: 0;
+  visibility: hidden;
+}
+
+.booking-form-input-label {
+  padding-left: 1rem;
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  visibility: visible;
+  -webkit-transition-property: opacity, visibility, -webkit-transform;
+  transition-property: opacity, visibility, -webkit-transform;
+  transition-property: transform, opacity, visibility;
+  transition-property: transform, opacity, visibility, -webkit-transform;
+  -webkit-transition-duration: 250ms;
+          transition-duration: 250ms;
+}
+
+.booking-form-radio-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.booking-form-radio-container-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.booking-form-radio-btn {
+  position: absolute;
+  opacity: 0;
+}
+
+.booking-form-radio-label span {
+  cursor: pointer;
+}
+
+.booking-form-submit-btn {
+  width: 10rem;
+  padding: 1rem 1.2rem;
+  color: white;
+  margin-top: 3rem;
+  margin-bottom: 0;
+}
+
+.booking-form-custom-radio-btn-outside {
+  position: relative;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  border: 5px solid #28b485;
+  margin-right: 1rem;
+}
+
+.booking-form-custom-radio-btn-outside::after {
+  position: absolute;
+  content: "";
+  display: block;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 65%;
+  height: 65%;
+  border-radius: 50%;
+  background-color: #28b485;
+  opacity: 0;
+  -webkit-transition: opacity 250ms;
+  transition: opacity 250ms;
+}
+
+.booking-form-radio-btn:checked + .booking-form-custom-radio-btn-div .booking-form-custom-radio-btn-outside::after {
+  opacity: 1;
+}
+
+.booking-primary-title {
+  text-align: left;
+  padding: 0;
+}
+
+.booking-primary-title-div {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 2.5rem;
+}
+
+@media (max-width: 1060px) {
+  .booking-form {
+    width: 80%;
+  }
+}
+
+@media (max-width: 900px) {
+  .booking {
+        grid-template-areas: "... background-img ...";
+  }
+  .booking-form {
+    width: 100%;
+    -webkit-clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%);
+  }
+  .booking-form-radio-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .booking-form-radio-container-div {
+    margin-bottom: 0.8rem;
+  }
+  .booking-primary-title-div {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .booking-form {
+    padding: 3rem;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+  .booking-form > * {
+    width: 100%;
+  }
+  .booking-form-submit-btn {
+    margin-top: 1.5rem;
+    width: 50%;
+    min-width: 10rem;
+  }
+}
+
+@media (max-width: 340px) {
+  .booking-form {
+    padding: 3rem 2rem;
+  }
+}
+/*# sourceMappingURL=Booking.css.map */

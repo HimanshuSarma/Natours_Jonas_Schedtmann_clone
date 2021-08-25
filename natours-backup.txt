@@ -1,0 +1,249 @@
+Features.css
+
+.features {
+  margin-top: -14rem;
+  padding: 12rem 0;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(126, 213, 111, 0.8)), to(rgba(40, 180, 133, 0.8))), url("../imgs/nat-4.jpg");
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url("../imgs/nat-4.jpg");
+  background-size: cover;
+  background-position: top left;
+  -webkit-transform: skewY(-7deg);
+          transform: skewY(-7deg);
+      grid-template-areas: "... features-card-container features-card-container ...";
+}
+
+.features > * {
+  -webkit-transform: skewY(7deg);
+          transform: skewY(7deg);
+}
+
+.features h1 {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  color: red;
+  text-align: center;
+}
+
+.features-card-container {
+  margin: 0 auto;
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-area: features-card-container;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(0px, calc(100%/4)))[4];
+      grid-template-columns: repeat(4, minmax(0px, calc(100%/4)));
+      grid-template-areas: "card-1 card-2 card-3 card-4";
+  grid-column-gap: 3.5rem;
+}
+
+.features-card-container-card-1 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: card-1;
+}
+
+.features-card-container-card-2 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: card-2;
+}
+
+.features-card-container-card-3 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: card-3;
+}
+
+.features-card-container-card-4 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 4;
+  grid-area: card-4;
+}
+
+@media (max-width: 1050px) {
+  .features {
+    margin-top: -16rem;
+  }
+  .features-card-container {
+    grid-column-gap: 2rem;
+  }
+}
+
+@media (max-width: 970px) {
+  .features {
+    margin-top: -20rem;
+    padding: 10rem 0;
+  }
+  .features-card-container {
+    grid-column-gap: 1rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .features {
+        grid-template-areas: "... features-card-container ...";
+    padding: 6rem 0;
+  }
+  .features-card-container {
+    -ms-grid-columns: minmax(0, 100%);
+        grid-template-columns: minmax(0, 100%);
+        grid-template-areas: "card-1" "card-2" "card-3" "card-4";
+    grid-column-gap: 0;
+    grid-row-gap: 3.5rem;
+  }
+}
+/*# sourceMappingURL=Features.css.map */
+
+
+
+
+
+
+
+About.scss
+
+.about {
+    padding-bottom: 25rem;
+    background-color: #f7f7f7;
+    margin-top: -20vh;
+    grid-template-areas: ". . . ." "about-primary-title-div about-primary-title-div about-primary-title-div about-primary-title-div" "... about-description about-images-container ...";
+    grid-template-rows: 18vh;
+    justify-content: center;
+    &-primary-title {
+        padding: 0 1rem;
+        text-align: center;
+        font-size: 2.1875rem;
+        background-image: linear-gradient(to right, #7ed56f, #28b485);
+        background-size: cover;
+        color: transparent;
+        letter-spacing: 0.125rem;
+        transition-property: transform, box-shadow;
+        transition-duration: 250ms;
+        -webkit-background-clip: text;
+        &:hover {
+            transform: skew(15deg, 2deg) scale(1.1);
+            text-shadow: 10px 10px 1rem rgba(0, 0, 0, 0.1);
+        }
+        &-div {
+            grid-area: about-primary-title-div;
+            padding-top: 7rem;
+            margin: 0 auto;
+        }
+    }
+    &-description {
+        grid-area: about-description;
+        margin-top: 4rem;
+        &-container {
+            margin-bottom: 2rem;
+        }
+        &-container>* {
+            font-size: 1rem;
+        }
+        &-learn-more-btn {
+            background: none;
+            padding: 0.4rem 0.2rem;
+            border: none;
+            border-bottom: 1px solid #55c57a;
+            font-family: inherit;
+            font-size: 1rem;
+            color: #55c57a;
+            transition-property: background-color, color, transform;
+            transition-duration: 250ms;
+            &:hover {
+                background-color: #55c57a;
+                color: white;
+                transform: translateY(-2px);
+            }
+            &:active {
+                transform: translateY(0);
+            }
+        }
+    }
+    &-images-container {
+        position: relative;
+        grid-area: about-images-container;
+        margin-top: 4rem;
+        height: 0;
+        &-img {
+            width: 54.44%;
+            position: absolute;
+            box-shadow: 1.5rem 2rem 5rem rgba(0, 0, 0, 0.4);
+            transition-property: transform, z-index, outline, box-shadow;
+            transition-duration: 250ms;
+            &:hover {
+                transform: scale(1.1) translateY(-2px);
+                z-index: 1;
+                outline: 0.9375rem solid #55c57a;
+                outline-offset: 1.25rem;
+                box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.5);
+            }
+        }
+        &-img2 {
+            top: 2.7rem;
+            right: 0;
+        }
+        &-img3 {
+            top: 6rem;
+            left: 20%;
+        }
+    }
+}
+
+@media (min-width: 901px) {
+    .about-images-container:hover .about-images-container-img:not(:hover) {
+        transform: scale(0.9);
+    }
+}
+
+@media (max-width: 900px) {
+    .about {
+        grid-template-areas: ". . ." "about-primary-title-div about-primary-title-div about-primary-title-div" "... about-description ..." "... about-images-container ...";
+        &-description,
+        &-images-container {
+            margin: 2rem 0;
+            &-img {
+                position: static;
+                width: 40%;
+                transform: translate(0, 0);
+                &:hover {
+                    transform: translateY(-2px) scale(1.1);
+                    z-index: 10;
+                }
+            }
+            &-img2 {
+                position: absolute;
+                top: -15px;
+                right: 50%;
+                z-index: 5;
+                transform: translateX(50%);
+                &:hover {
+                    transform: translateX(50%) scale(1.1);
+                }
+            }
+        }
+        &-images-container {
+            height: auto;
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+    .about-primary-title {
+        font-size: 1.85rem;
+        letter-spacing: 1.6px;
+        max-width: 48rem;
+        &-div {
+            padding-top: 3rem;
+        }
+    }
+}
+
+.hoverClass {
+    transform: scale(0.9);
+}
+
+.hoverClassImg2 {
+    transform: scale(0.9) translateX(50%);
+}
